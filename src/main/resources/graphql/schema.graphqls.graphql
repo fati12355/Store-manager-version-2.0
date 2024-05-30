@@ -1,0 +1,38 @@
+scalar LocalDateTime
+
+type Users {
+    id: ID!
+    username: String!
+    hash: String!
+}
+
+type Product {
+    id: ID!
+    name: String!
+    quantity: Int!
+    price: Float!
+    weight: Float
+    expiryDate: LocalDateTime!
+}
+
+type Operations {
+    id: ID!
+    product: Product!
+    operator: Users!
+    operationType: String!
+    price: Float!
+    weight: Float!
+    quantity: Int!
+    expiryDate: LocalDateTime!
+    timestamp: LocalDateTime!
+}
+
+type Query {
+    products(name: String): [Product]
+    operations: [Operations]
+}
+
+type Mutation {
+    addProduct(name: String!, expirationDate: String, weight: Float, price: Float!, quantity: Int!): Product
+    removeProduct(id: ID!): Boolean
+}
