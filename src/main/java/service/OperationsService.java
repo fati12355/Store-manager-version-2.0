@@ -27,7 +27,7 @@ public class OperationsService {
     }
 
     public Operations saveOperation(Operations operation) {
-        // Here you can add any logic you need before saving the operation
+        //Add any logic needed before saving the operation
         return operationsRepository.save(operation);
     }
 
@@ -51,5 +51,5 @@ public class OperationsService {
         operationsRepository.deleteById(id);
     }
 
-    // Additional methods for your business logic
+    // Additional methods for business logic
 }
